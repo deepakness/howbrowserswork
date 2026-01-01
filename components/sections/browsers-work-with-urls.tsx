@@ -1,5 +1,5 @@
 import ExampleContainer from "@/components/example-container";
-import AnythingToUrl from "@/components/examples/anything-to-url";
+import AnythingToUrlExample from "@/components/examples/anything-to-url-example";
 import Highlight from "@/components/highlight";
 import Section from "@/components/section";
 
@@ -36,7 +36,7 @@ export default function BrowsersWorkWithUrls() {
                 bar and press <kbd>Enter</kbd> (or click the "Go" button):
             </p>
             <ExampleContainer>
-                <AnythingToUrl />
+                <AnythingToUrlExample />
             </ExampleContainer>
         </Section>
     );

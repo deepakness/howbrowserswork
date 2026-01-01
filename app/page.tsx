@@ -1,4 +1,5 @@
 import BrowsersWorkWithUrls from "@/components/sections/browsers-work-with-urls";
+import TurningAUrlIntoAnHttpRequest from "@/components/sections/turning-a-url-into-an-http-request";
 
 export default function IndexPage() {
     return (
@@ -9,11 +10,11 @@ export default function IndexPage() {
                         How Browsers Work
                     </h1>
                     <p className="max-w-lg text-lg leading-8 text-zinc-600 ">
-                        An interactive guide to the internals of browser
-                        operations.
+                        An interactive guide to the internals of browsers.
                     </p>
                 </div>
                 <BrowsersWorkWithUrls />
+                <TurningAUrlIntoAnHttpRequest />
             </main>
         </div>
     );

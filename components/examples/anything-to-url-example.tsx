@@ -26,7 +26,7 @@ const buildUrl = (value: string): { url: string; kind: TransformKind } => {
     };
 };
 
-export default function AnythingToUrl() {
+export default function AnythingToUrlExample() {
     const [inputValue, setInputValue] = useState("");
     const [outputValue, setOutputValue] = useState("");
     const [transformKind, setTransformKind] = useState<TransformKind>("search");
@@ -53,9 +53,16 @@ export default function AnythingToUrl() {
         return () => window.clearTimeout(id);
     }, [outputValue]);
 
+    const isSubmitDisabled = inputValue.trim().length === 0;
+
     return (
         <div className="space-y-4">
-            <AddressBar onSubmit={handleSubmit} />
+            <AddressBar
+                value={inputValue}
+                onChange={setInputValue}
+                onSubmit={handleSubmit}
+                isSubmitDisabled={isSubmitDisabled}
+            />
             {outputValue ? (
                 <div
                     className={[
