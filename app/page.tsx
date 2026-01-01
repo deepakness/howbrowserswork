@@ -11,7 +11,7 @@ export default function IndexPage() {
                         How Browsers Work
                     </h1>
                     <p className="max-w-lg text-lg leading-8 text-zinc-600 ">
-                        An interactive guide to the internals of browsers.
+                        An interactive guide to the internal world of browsers.
                     </p>
                 </div>
                 <BrowsersWorkWithUrls />
