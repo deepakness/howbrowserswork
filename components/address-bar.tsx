@@ -9,10 +9,12 @@ interface AddressBarProps {
     onChange?: (value: string) => void;
     onSubmit?: (value: string) => void;
     isInvalid?: boolean;
+    readOnly?: boolean;
     isSubmitDisabled?: boolean;
 }
 
 export default function AddressBar({
+    readOnly,
     className,
     defaultValue,
     value,
@@ -54,6 +56,7 @@ export default function AddressBar({
                     <div className="flex-1 flex items-center gap-2">
                         <div className="flex-1">
                             <input
+                                readOnly={readOnly}
                                 name="address"
                                 value={isControlled ? value : undefined}
                                 defaultValue={

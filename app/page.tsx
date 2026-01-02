@@ -1,7 +1,9 @@
 import Footer from "@/components/footer";
+import NextSection from "@/components/NextSection";
 import { SectionsProgressProvider } from "@/components/sections-progress";
 import BrowsersWorkWithUrls from "@/components/sections/browsers-work-with-urls";
 import EstablishingTheTcpConnection from "@/components/sections/establishing-the-tcp-connection";
+import HttpRequestAndResponse from "@/components/sections/http-request-and-response";
 import ResolvingTheServerAddress from "@/components/sections/resolving-the-server-address";
 import TurningAUrlIntoAnHttpRequest from "@/components/sections/turning-a-url-into-an-http-request";
 import Sidebar from "@/components/sidebar";
@@ -36,8 +38,18 @@ const sections: SectionConfig[] = [
     },
     {
         id: "establishing-the-tcp-connection",
-        title: "Establishing the TCP Connection",
+        title: "Establishing the TCP connection",
         Component: EstablishingTheTcpConnection,
+    },
+    {
+        id: "http-request-and-response",
+        title: "HTTP requests and responses",
+        Component: HttpRequestAndResponse,
+    },
+    {
+        id: "next-section",
+        title: "Next Section",
+        Component: NextSection,
     },
 ];
 
@@ -76,7 +88,7 @@ export default function IndexPage() {
                     </main>
                     <Footer />
                 </div>
-                <div className="hidden lg:fixed lg:right-20 lg:top-16 lg:block lg:w-64">
+                <div className="hidden lg:fixed lg:right-20 lg:top-16 lg:block lg:w-80">
                     <Sidebar sections={sidebarSections} />
                 </div>
             </div>

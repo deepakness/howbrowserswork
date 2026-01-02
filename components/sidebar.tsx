@@ -11,7 +11,7 @@ export default function Sidebar({ sections }: { sections: SectionSummary[] }) {
     const { activeSectionId } = useSectionsProgress();
 
     return (
-        <aside className="w-full lg:w-72 lg:shrink-0">
+        <aside className="w-full lg:w-80 lg:shrink-0">
             <div className="lg:sticky lg:top-16">
                 <p className=" text-slate-400 font-semibold font-serif">
                     Contents

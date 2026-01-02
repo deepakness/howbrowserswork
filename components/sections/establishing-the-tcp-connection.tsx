@@ -10,7 +10,7 @@ type SectionProps = {
 
 export default function EstablishingTheTcpConnection({
     sectionId = "establishing-the-tcp-connection",
-    title = "Establishing the TCP Connection",
+    title = "Establishing the TCP connection",
 }: SectionProps) {
     return (
         <Section id={sectionId} title={title}>
