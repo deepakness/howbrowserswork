@@ -178,11 +178,7 @@ export default function TcpHandshakeExample() {
                             : connectionState}
                     </span>
                 </div>
-                <Button
-                    onClick={handleConnect}                    
-                >
-                    {buttonLabel}
-                </Button>
+                <Button onClick={handleConnect}>{buttonLabel}</Button>
             </div>
             <div className="space-y-1 text-xs">
                 {steps.map((step, index) => (
