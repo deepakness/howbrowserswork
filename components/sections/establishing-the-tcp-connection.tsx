@@ -3,9 +3,17 @@ import TcpHandshakeExample from "@/components/examples/tcp-handshake-example";
 import TcpCommunicationExample from "@/components/examples/tcp-communication-example";
 import Section from "@/components/section";
 
-export default function EstablishingTheTcpConnection() {
+type SectionProps = {
+    sectionId?: string;
+    title?: string;
+};
+
+export default function EstablishingTheTcpConnection({
+    sectionId = "establishing-the-tcp-connection",
+    title = "Establishing the TCP Connection",
+}: SectionProps) {
     return (
-        <Section title="Establishing the TCP Connection">
+        <Section id={sectionId} title={title}>
             <p>
                 After DNS gives the browser an IP address, it still needs a
                 reliable connection to the server. TCP is the protocol that sets

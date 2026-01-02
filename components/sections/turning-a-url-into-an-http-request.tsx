@@ -6,14 +6,22 @@ import Section from "@/components/section";
 import { useState } from "react";
 import Highlight from "@/components/highlight";
 
-export default function TurningAUrlIntoAnHttpRequest() {
+type SectionProps = {
+    sectionId?: string;
+    title?: string;
+};
+
+export default function TurningAUrlIntoAnHttpRequest({
+    sectionId = "turning-a-url-into-an-http-request",
+    title = "Turning a URL into an HTTP request",
+}: SectionProps) {
     const [host, setHost] = useState("example.com");
     const headers = `Host: ${host}
 Accept: text/html
 `;
 
     return (
-        <Section title="Turning a URL into an HTTP request">
+        <Section id={sectionId} title={title}>
             <p>
                 Once we know the exact URL we want to visit, we can send a
                 request to the server to fetch the resource and display it in

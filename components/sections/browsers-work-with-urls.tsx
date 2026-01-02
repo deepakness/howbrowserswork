@@ -3,9 +3,17 @@ import AnythingToUrlExample from "@/components/examples/anything-to-url-example"
 import Highlight from "@/components/highlight";
 import Section from "@/components/section";
 
-export default function BrowsersWorkWithUrls() {
+type SectionProps = {
+    sectionId?: string;
+    title?: string;
+};
+
+export default function BrowsersWorkWithUrls({
+    sectionId = "browsers-work-with-urls",
+    title = "Browsers work with URLs",
+}: SectionProps) {
     return (
-        <Section title="Browsers work with URLs">
+        <Section id={sectionId} title={title}>
             <p>
                 You can type literally anything in the address bar. But under
                 the hood, browsers work with URLs:

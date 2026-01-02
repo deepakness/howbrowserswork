@@ -3,9 +3,17 @@ import ResolveServerAddressExample from "../examples/resolve-server-address-exam
 import Section from "../section";
 import Highlight from "../highlight";
 
-export default function ResolvingTheServerAddress() {
+type SectionProps = {
+    sectionId?: string;
+    title?: string;
+};
+
+export default function ResolvingTheServerAddress({
+    sectionId = "resolving-the-server-address",
+    title = "Resolving the server address",
+}: SectionProps) {
     return (
-        <Section title="Resolving the server address">
+        <Section id={sectionId} title={title}>
             <p>
                 Browsers can&apos;t send requests to names like{" "}
                 <Highlight variant="slate">example.com</Highlight>.
