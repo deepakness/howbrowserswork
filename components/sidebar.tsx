@@ -47,7 +47,7 @@ export default function Sidebar({
                                     aria-current={isActive ? "true" : undefined}
                                     onClick={onNavigate}
                                 >
-                                    <div className="flex items-start justify-between gap-3">
+                                    <div className="flex items-center gap-3">
                                         <span
                                             className={[
                                                 "leading-5",

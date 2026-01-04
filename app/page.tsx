@@ -68,7 +68,7 @@ const sections: SectionConfig[] = [
     },
     {
         id: "layout-paint-composite",
-        title: "Layout, Paint, and Composite (The Rendering Pipeline)",
+        title: "Layout, Paint, and Composite",
         Component: LayoutPaintComposite,
     },
     {

@@ -9,7 +9,11 @@ export default function SummarySection({
 }) {
     return (
         <Section id={sectionId} title={title}>
-            <p>This is a summary of the guide.</p>
+            <p>
+                That is it! If you completed all the examples, you should have a
+                clear mental model of how browsers work.
+            </p>
+            <p>Thank you for reading the guide, I hope you enjoyed it.</p>
         </Section>
     );
 }
