@@ -94,7 +94,7 @@ export default function IndexPage() {
                         <main className="flex w-full flex-col space-y-10">
                             <div className="flex flex-col items-center gap-4 text-center sm:items-start sm:text-left">
                                 <Link href="/">
-                                    <h1 className="font-serif max-w-xs text-3xl font-semibold leading-8 tracking-tight text-black dark:text-zinc-50">
+                                    <h1 className="font-serif max-w-xs text-3xl font-semibold leading-8 tracking-tight text-black">
                                         How Browsers Work
                                     </h1>
                                 </Link>

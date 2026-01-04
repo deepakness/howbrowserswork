@@ -27,23 +27,36 @@ export default function MobileToc({
     }, [activeSectionId, sections]);
 
     useEffect(() => {
-        let frame = 0;
+        const getScrollTop = () =>
+            Math.max(
+                0,
+                window.scrollY,
+                window.pageYOffset,
+                window.visualViewport?.pageTop ?? 0,
+                document.scrollingElement?.scrollTop ?? 0,
+                -document.documentElement.getBoundingClientRect().top,
+                -document.body.getBoundingClientRect().top
+            );
         const updateScrollState = () => {
-            setHasScrolled(window.scrollY > 0);
-        };
-        const handleScroll = () => {
-            if (frame) return;
-            frame = window.requestAnimationFrame(() => {
-                frame = 0;
-                updateScrollState();
-            });
+            const next = getScrollTop() > 0;
+            setHasScrolled((prev) => (prev === next ? prev : next));
         };
 
+        const viewport = window.visualViewport;
         updateScrollState();
-        window.addEventListener("scroll", handleScroll, { passive: true });
+        window.addEventListener("scroll", updateScrollState, { passive: true });
+        window.addEventListener("resize", updateScrollState);
+        window.addEventListener("orientationchange", updateScrollState);
+        viewport?.addEventListener("scroll", updateScrollState, {
+            passive: true,
+        });
+        viewport?.addEventListener("resize", updateScrollState);
         return () => {
-            if (frame) window.cancelAnimationFrame(frame);
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", updateScrollState);
+            window.removeEventListener("resize", updateScrollState);
+            window.removeEventListener("orientationchange", updateScrollState);
+            viewport?.removeEventListener("scroll", updateScrollState);
+            viewport?.removeEventListener("resize", updateScrollState);
         };
     }, []);
 
@@ -78,7 +91,7 @@ export default function MobileToc({
                 .filter(Boolean)
                 .join(" ")}
         >
-            <div className="border-b border-slate-200 bg-white/95 backdrop-blur">
+            <div className="border-b border-slate-200 bg-white/95 backdrop-blur pt-[env(safe-area-inset-top)]">
                 <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-3 sm:px-16">
                     <div className="min-w-0">
                         <div className="text-[11px] uppercase tracking-[0.25em] text-slate-400">
