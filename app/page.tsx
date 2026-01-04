@@ -12,6 +12,7 @@ import TurningAUrlIntoAnHttpRequest from "@/components/sections/turning-a-url-in
 import Sidebar from "@/components/sidebar";
 import MobileToc from "@/components/mobile-toc";
 import Link from "next/link";
+import SummarySection from "@/components/sections/summary";
 
 type SectionComponentProps = {
     sectionId?: string;
@@ -69,6 +70,11 @@ const sections: SectionConfig[] = [
         id: "layout-paint-composite",
         title: "Layout, Paint, and Composite (The Rendering Pipeline)",
         Component: LayoutPaintComposite,
+    },
+    {
+        id: "summary",
+        title: "Summary",
+        Component: SummarySection,
     },
 ];
 
