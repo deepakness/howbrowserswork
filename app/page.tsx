@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import { SectionsProgressProvider } from "@/components/sections-progress";
+import AboutSection from "@/components/sections/about";
 import BrowsersWorkWithUrls from "@/components/sections/browsers-work-with-urls";
 import DomImportance from "@/components/sections/dom-importance";
 import EstablishingTheTcpConnection from "@/components/sections/establishing-the-tcp-connection";
@@ -23,6 +24,11 @@ type SectionConfig = {
 };
 
 const sections: SectionConfig[] = [
+    {
+        id: "about",
+        title: "About the guide",
+        Component: AboutSection,
+    },
     {
         id: "browsers-work-with-urls",
         title: "Browsers work with URLs",
